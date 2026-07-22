@@ -366,7 +366,7 @@
 <!-- 地図: Leaflet.js（APIキー不要のOpenStreetMapタイル。ピン・標準ズームコントロール・ホイールだけでズーム可能） -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
   document.querySelectorAll('.gmap-map').forEach(function (el) {
     var lat = parseFloat(el.dataset.lat);
     var lng = parseFloat(el.dataset.lng);
@@ -377,6 +377,10 @@ document.addEventListener('DOMContentLoaded', function () {
       maxZoom: 19
     }).addTo(map);
     L.marker([lat, lng]).addTo(map).bindPopup(label).openPopup();
+    // CSS Gridコンテナ内で初期化するとコンテナサイズが0で確定され地図が表示されない既知の問題への対策。
+    // フォント読み込み等でレイアウトが遅れて確定するケースにも耐えるよう複数回invalidateSizeする。
+    setTimeout(function () { map.invalidateSize(); }, 100);
+    setTimeout(function () { map.invalidateSize(); }, 500);
   });
 });
 </script>
