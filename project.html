@@ -201,15 +201,18 @@
 
         <!-- 試験導入: SVG自作地図 → Googleマップ埋め込みに変更（2026-07-22）。
              元のSVG版はgit履歴（コミット4b960c5以前）にそのまま残っているので、比較・差し戻しが必要ならいつでも戻せる。
-             APIキー不要のiframe embed方式（ https://www.google.com/maps?q=...&output=embed ）。 -->
+             ★2026-07-22 修正: 初回実装の ?q=...&output=embed（非公式簡易形式）は実機検証でクリック・ドラッグが
+             一切効かず、地図をクリックすると別タブでGoogle Maps本体が開くだけの静的画像同然だった（パパ指摘で発覚）。
+             Googleマップの「共有 → 地図を埋め込む」公式機能で生成した /maps/embed?pb=... 形式に差し替え済み。
+             こちらはAPIキー不要のままiframe内でズーム・パン等のインタラクティブ操作が完結する正式な埋め込み。 -->
         <div class="gmap-wrap">
           <div class="gmap-item">
             <h4>奈良県 御杖村</h4>
-            <iframe src="https://www.google.com/maps?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%AE%87%E9%99%80%E9%83%A1%E5%BE%A1%E6%9D%96%E6%9D%91&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="奈良県御杖村の地図"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52621.06428092902!2d136.15509409999999!3d34.4821786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6006a65f17ab1391%3A0x845e39cd6d58585a!2z5aWI6Imv55yM5a6H6ZmA6YOh5b6h5p2W5p2R!5e0!3m2!1sja!2sjp!4v1784695623421!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="奈良県御杖村の地図"></iframe>
           </div>
           <div class="gmap-item">
             <h4>三重県 嬉野</h4>
-            <iframe src="https://www.google.com/maps?q=%E4%B8%89%E9%87%8D%E7%9C%8C%E6%9D%BE%E9%98%AA%E5%B8%82%E5%AC%89%E9%87%8E%E7%94%BA&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="三重県松阪市嬉野町の地図"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6566.341462938788!2d136.47938334999998!3d34.62512554999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600413002680e7f1%3A0xacca8267a69d7600!2z44CSNTE1LTIzMjQg5LiJ6YeN55yM5p2-6Ziq5biC5ayJ6YeO55S6!5e0!3m2!1sja!2sjp!4v1784695746317!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="三重県松阪市嬉野町の地図"></iframe>
           </div>
         </div>
 
