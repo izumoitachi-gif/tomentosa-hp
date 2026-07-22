@@ -189,14 +189,52 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
 .section-light-alt { background: var(--color-cream-alt); color: var(--color-text-dark); }
 
 /* 斜めカットでセクション境界を演出（souseikiri既存CSSの手法を継承） */
+.section-diagonal { overflow: visible; }
 .section-diagonal::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  bottom: -1px; left: 0; right: 0;
   height: 8rem;
-  background: inherit;
+  z-index: 2;
   clip-path: polygon(0 0, 100% 100%, 0 100%);
 }
+/* 次セクションと同じ背景色を継がせて斜めに食い込ませる。使用時は続くセクションの色を明示指定する */
+.section-diagonal.to-light::after { background: var(--color-cream); }
+.section-diagonal.to-light-alt::after { background: var(--color-cream-alt); }
+.section-diagonal.to-dark::after { background: linear-gradient(160deg, var(--color-dark) 0%, var(--color-dark-alt) 100%); }
+
+/* 波型ディバイダー（SVGベース・柔らかい境界） */
+.section-wave { position: relative; overflow: visible; }
+.section-wave::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 6rem;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.section-wave.to-light::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z' fill='%23faf8f2'/%3E%3C/svg%3E");
+}
+.section-wave.to-light-alt::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z' fill='%23f2efe6'/%3E%3C/svg%3E");
+}
+
+/* ---------- 画像背景セクション（features-bg.jp等・ダークオーバーレイ付き） ---------- */
+.section-image-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-text-light);
+}
+.section-image-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(26,46,31,.88) 0%, rgba(20,37,25,.82) 100%);
+}
+.section-image-bg .section-inner { position: relative; z-index: 1; }
 
 .section-title {
   margin-bottom: 4.8rem;
@@ -236,6 +274,7 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
 
 /* トップページ限定：大きめヒーロー＋緩やかな背景アニメーション */
 .home-hero {
+  position: relative;
   min-height: 92vh;
   display: flex;
   align-items: center;
@@ -248,7 +287,11 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
   z-index: 0;
   background:
     radial-gradient(ellipse at 20% 20%, rgba(122, 196, 127, .18), transparent 55%),
-    radial-gradient(ellipse at 80% 70%, rgba(122, 196, 127, .12), transparent 50%);
+    radial-gradient(ellipse at 80% 70%, rgba(122, 196, 127, .12), transparent 50%),
+    linear-gradient(160deg, rgba(26,46,31,.90) 0%, rgba(20,37,25,.86) 100%),
+    url('images/hero.jpg');
+  background-size: auto, auto, auto, cover;
+  background-position: center, center, center, center;
   animation: driftGlow 18s ease-in-out infinite alternate;
 }
 @keyframes driftGlow {
@@ -476,6 +519,13 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
 
 /* ---------- お問い合わせフォーム ---------- */
 .contact-form { max-width: 640px; margin: 0 auto; }
+.contact-form.on-image-bg {
+  background: var(--color-cream);
+  color: var(--color-text-dark);
+  padding: 4rem 3.2rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2rem 4rem rgba(var(--color-shadow), .3);
+}
 .form-group { margin-bottom: 2.4rem; }
 .form-group label {
   display: block;
@@ -503,13 +553,22 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
 
 /* ---------- フッター ---------- */
 .site-footer {
-  background: var(--color-dark);
+  position: relative;
+  background: linear-gradient(160deg, var(--color-dark) 0%, var(--color-dark-alt) 100%);
   color: var(--color-text-light);
-  padding: 6.4rem 0 3.2rem;
+  padding: 7.2rem 0 3.2rem;
+}
+/* フッター上部のアクセントグラデーションライン（05番の実CSS調査で見た手法を1px罫線に応用） */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-dark) 50%, var(--color-accent) 100%);
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
   gap: 4rem;
   margin-bottom: 4.8rem;
 }
@@ -517,14 +576,43 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
 .footer-grid ul li { margin-bottom: 1rem; }
 .footer-grid a { opacity: .85; transition: opacity var(--transition-fast); font-size: 1.4rem; }
 .footer-grid a:hover { opacity: 1; color: var(--color-accent); }
+.footer-brand-desc {
+  font-size: 1.4rem;
+  opacity: .72;
+  line-height: 1.9;
+  max-width: 320px;
+  margin-top: 1rem;
+}
+.footer-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: 1.2rem;
+  padding: .5rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background: rgba(122,196,127,.14);
+  color: var(--color-accent);
+  margin-bottom: 1.6rem;
+}
+.footer-status-badge .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+.footer-cta .btn { display: block; text-align: center; margin-top: .8rem; }
 .footer-bottom {
   border-top: 1px solid rgba(250,248,242,.12);
   padding-top: 2.4rem;
   font-size: 1.2rem;
   opacity: .6;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-@media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr; gap: 3.2rem; } }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 3.2rem; } }
+@media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .footer-bottom { justify-content: center; text-align: center; } }
 
 /* ---------- 小型カードグリッド（特徴・事業内容・お問い合わせの流れ等 汎用） ---------- */
 .mini-cards {
@@ -582,6 +670,31 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
 .timeline-list .year { font-weight: 700; font-size: 1.4rem; }
 .timeline-list .desc { font-size: 1.4rem; color: var(--color-text-muted); }
 .timeline-list li.is-current .year { color: var(--color-accent-dark); }
+.timeline-list .thumb {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin-top: 1rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- ミニギャラリー（プロジェクト写真の複数枚展示） ---------- */
+.mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.mini-gallery img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-fast);
+}
+.mini-gallery img:hover { transform: scale(1.03); }
+@media (max-width: 600px) { .mini-gallery { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------- 比較ブロック ---------- */
 .comparison-block {
