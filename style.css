@@ -526,6 +526,94 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
 }
 @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr; gap: 3.2rem; } }
 
+/* ---------- 小型カードグリッド（特徴・事業内容・お問い合わせの流れ等 汎用） ---------- */
+.mini-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.4rem;
+  margin-top: 3.2rem;
+}
+.mini-card {
+  padding: 2.8rem 2.4rem;
+  background: #fff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.mini-card .icon { font-size: 2.4rem; margin-bottom: 1.2rem; }
+.mini-card .num {
+  display: inline-block;
+  color: var(--color-accent-dark);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: .8rem;
+}
+.mini-card h4 { font-size: 1.7rem; margin-bottom: .8rem; }
+.mini-card p { font-size: 1.4rem; color: var(--color-text-muted); }
+.section-dark .mini-card {
+  background: rgba(250, 248, 242, .06);
+  border-color: rgba(250, 248, 242, .14);
+  color: var(--color-text-light);
+}
+.section-dark .mini-card p { color: rgba(250, 248, 242, .72); }
+
+/* ---------- タイムラインリスト（プロジェクト進捗） ---------- */
+.timeline-list {
+  margin-top: 2.4rem;
+  border-left: 2px solid var(--color-border);
+  padding-left: 2.4rem;
+}
+.timeline-list li {
+  position: relative;
+  padding-bottom: 2rem;
+}
+.timeline-list li::before {
+  content: '';
+  position: absolute;
+  left: -2.9rem;
+  top: .4rem;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+.timeline-list li.is-current::before {
+  background: var(--color-accent-dark);
+  box-shadow: 0 0 0 4px rgba(122,196,127,.25);
+}
+.timeline-list .year { font-weight: 700; font-size: 1.4rem; }
+.timeline-list .desc { font-size: 1.4rem; color: var(--color-text-muted); }
+.timeline-list li.is-current .year { color: var(--color-accent-dark); }
+
+/* ---------- 比較ブロック ---------- */
+.comparison-block {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  margin: 3.2rem 0;
+  flex-wrap: wrap;
+}
+.comparison-item { text-align: center; }
+.comparison-item .label { font-size: 1.4rem; color: var(--color-text-muted); margin-bottom: .8rem; }
+.comparison-item .value { font-size: 3.2rem; font-weight: 700; color: var(--color-accent-dark); }
+.comparison-vs { font-size: 1.6rem; color: var(--color-text-muted); }
+
+/* ---------- 簡易テーブル（拠点一覧等） ---------- */
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+.simple-table th, .simple-table td {
+  text-align: left;
+  padding: 1.4rem 1.2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.simple-table th { font-size: 1.3rem; color: var(--color-text-muted); font-weight: 700; }
+
+/* ---------- ページ内カテゴリ説明リスト ---------- */
+.category-desc-list { margin-top: 2rem; }
+.category-desc-list dt { font-weight: 700; margin-top: 1.4rem; color: var(--color-accent-dark); }
+.category-desc-list dd { font-size: 1.4rem; color: var(--color-text-muted); margin-top: .3rem; }
+
 /* ---------- フェードインアニメーション（IntersectionObserver + クラス切替） ---------- */
 .fade-in {
   opacity: 0;
