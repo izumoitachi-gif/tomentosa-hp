@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="souseikiri-assets/style.css">
+<!-- 地図: Leaflet.js + OpenStreetMap（APIキー不要でピン・標準ズームコントロール・ホイールだけでズーム可能な地図を実現） -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
 
@@ -199,20 +201,20 @@
       <div class="section-inner">
         <h2 class="section-title">2拠点の概要</h2>
 
-        <!-- 試験導入: SVG自作地図 → Googleマップ埋め込みに変更（2026-07-22）。
-             元のSVG版はgit履歴（コミット4b960c5以前）にそのまま残っているので、比較・差し戻しが必要ならいつでも戻せる。
-             ★2026-07-22 修正: 初回実装の ?q=...&output=embed（非公式簡易形式）は実機検証でクリック・ドラッグが
-             一切効かず、地図をクリックすると別タブでGoogle Maps本体が開くだけの静的画像同然だった（パパ指摘で発覚）。
-             Googleマップの「共有 → 地図を埋め込む」公式機能で生成した /maps/embed?pb=... 形式に差し替え済み。
-             こちらはAPIキー不要のままiframe内でズーム・パン等のインタラクティブ操作が完結する正式な埋め込み。 -->
+        <!-- 地図の実装履歴（2026-07-22）:
+             ①SVG自作地図 → ②Googleマップ非公式embed(?q=...&output=embed、クリックで別窓に飛ぶだけの静的画像同然だった)
+             → ③Google公式pb形式embed(操作はできたがCtrl+スクロールでしかズームできない仕様が残った)
+             → ④現行: Leaflet.js + OpenStreetMap。APIキー完全不要のまま、ピン（マーカー）・標準ズームコントロール
+             （+/-ボタン）・ホイールだけで（Ctrl不要）ズームできる、本当にデフォルトの地図体験を実現。
+             ①②③のバージョンはgit履歴にそのまま残っているのでいつでも比較・差し戻し可能。 -->
         <div class="gmap-wrap">
           <div class="gmap-item">
             <h4>奈良県 御杖村</h4>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52621.06428092902!2d136.15509409999999!3d34.4821786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6006a65f17ab1391%3A0x845e39cd6d58585a!2z5aWI6Imv55yM5a6H6ZmA6YOh5b6h5p2W5p2R!5e0!3m2!1sja!2sjp!4v1784695623421!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="奈良県御杖村の地図"></iframe>
+            <div class="gmap-map" id="map-udanogimi" data-lat="34.4880933" data-lng="136.1659914" data-label="奈良県御杖村"></div>
           </div>
           <div class="gmap-item">
             <h4>三重県 嬉野</h4>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6566.341462938788!2d136.47938334999998!3d34.62512554999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600413002680e7f1%3A0xacca8267a69d7600!2z44CSNTE1LTIzMjQg5LiJ6YeN55yM5p2-6Ziq5biC5ayJ6YeO55S6!5e0!3m2!1sja!2sjp!4v1784695746317!5m2!1sja!2sjp" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="三重県松阪市嬉野町の地図"></iframe>
+            <div class="gmap-map" id="map-ureshino" data-lat="34.6254342" data-lng="136.4807749" data-label="三重県松阪市嬉野町"></div>
           </div>
         </div>
 
@@ -361,5 +363,22 @@
 
 <script src="script.js"></script>
 <script src="souseikiri-assets/script.js"></script>
+<!-- 地図: Leaflet.js（APIキー不要のOpenStreetMapタイル。ピン・標準ズームコントロール・ホイールだけでズーム可能） -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.gmap-map').forEach(function (el) {
+    var lat = parseFloat(el.dataset.lat);
+    var lng = parseFloat(el.dataset.lng);
+    var label = el.dataset.label || '';
+    var map = L.map(el, { scrollWheelZoom: true }).setView([lat, lng], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+    L.marker([lat, lng]).addTo(map).bindPopup(label).openPopup();
+  });
+});
+</script>
 </body>
 </html>

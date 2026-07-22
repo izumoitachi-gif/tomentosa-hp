@@ -1,6 +1,6 @@
 /* souseikiri style.css を .souseikiri-embed スコープに変換したもの（自動生成） */
 
-/* ---------- Googleマップ埋め込み（試験導入・SVG地図の代替案・2026-07-22） ---------- */
+/* ---------- 地図埋め込み（2026-07-22 Leaflet.js + OpenStreetMapへ移行。APIキー不要でピン・標準ズームコントロール・Ctrl不要のホイールズームを実現） ---------- */
 .souseikiri-embed .gmap-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -15,13 +15,24 @@
   font-weight: 700;
   font-size: 1.05rem;
 }
-.souseikiri-embed .gmap-item iframe {
+.souseikiri-embed .gmap-item iframe,
+.souseikiri-embed .gmap-map {
   width: 100%;
   height: 280px;
   border: 0;
   border-radius: 10px;
   display: block;
+  overflow: hidden;
   box-shadow: 0 6px 24px rgba(0,0,0,.15);
+  background: #e8ece5;
+}
+.souseikiri-embed .gmap-map .leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+.souseikiri-embed .gmap-map .leaflet-popup-content {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+  color: var(--green-dark);
 }
 @media (max-width: 700px) {
   .souseikiri-embed .gmap-wrap { grid-template-columns: 1fr; }
