@@ -4,8 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>植林プロジェクト｜株式会社SANSEIパウロウニア・トメントサ</title>
-<meta name="description" content="奈良県御杖村・三重県嬉野、2拠点の早生桐植林プロジェクトの状況をご紹介します。">
+<meta name="description" content="京都皇帝早生桐による奈良県御杖村・三重県嬉野の植林プロジェクト。40ha・40,000本、国内最大規模の実績。メリクロン統一苗によるスマート林業。">
 <link rel="stylesheet" href="style.css">
+<!-- souseikiri（GitHub: izumoitachi-gif/souseikiri-hp）をそのまま差し替え表示するための専用フォント・CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="souseikiri-assets/style.css">
 </head>
 <body>
 
@@ -26,194 +31,324 @@
 
 <main>
 
-  <!-- Section 1: ページヒーロー -->
-  <section class="page-hero">
-    <div class="section-inner">
-      <span class="eyebrow">Project</span>
-      <h1>植林プロジェクト</h1>
-    </div>
-  </section>
+  <!--
+    以下、souseikiri（GitHub: izumoitachi-gif/souseikiri-hp）のindex.htmlをそのまま移植。
+    パパ指示「森林プロジェクトのページをそのまま https://github.com/izumoitachi-gif/souseikiri-hp に差し替えろ」
+    に基づき、hero〜ctaの全セクションを .souseikiri-embed でスコープした上でそのまま使用する。
+    差分：img/video の src を souseikiri-assets/ 配下に変更、CTA導線をトメントサ自ページ(contact.html)に変更。
+  -->
+  <div class="souseikiri-embed">
 
-  <!-- Section 2: 2拠点の全体像 -->
-  <section class="section section-light">
-    <div class="section-inner fade-in">
-      <div class="section-title">
-        <span class="eyebrow">Overview</span>
-        <h2>2拠点の概要</h2>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero" style="background-image:url('souseikiri-assets/images/hero.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-sub">京都皇帝早生桐 植林プロジェクト</p>
+        <h1>ここが変わる。<br>荒廃地を、資産に。</h1>
+        <p class="hero-desc">奈良・三重 2拠点 40ha / 40,000本<br>国内早生桐 実績最大規模</p>
+        <a href="#timeline" class="btn-scroll">プロジェクトを見る ↓</a>
       </div>
-      <div class="stat-block">
-        <div class="stat-item">
-          <span class="big-num">40<small>ha</small></span>
-          <p>合計植林面積</p>
-        </div>
-        <div class="stat-item">
-          <span class="big-num">40,000<small>本</small></span>
-          <p>合計植栽本数</p>
-        </div>
-        <div class="stat-item">
-          <span class="big-num">2023<small>年8月〜</small></span>
-          <p>伐採・整備開始</p>
-        </div>
-        <div class="stat-item">
-          <span class="big-num">2026<small>年〜</small></span>
-          <p>植栽開始（計画）</p>
-        </div>
-      </div>
-      <p style="text-align:center;max-width:640px;margin:2.4rem auto 3.2rem;color:var(--color-text-muted);font-size:1.5rem;">
-        奈良県御杖村・三重県嬉野の2拠点、それぞれ20ha・20,000本の規模で展開しています。
-      </p>
+      <div class="diagonal-bottom"></div>
+    </section>
 
-      <!-- 位置図（souseikiri実装をそのまま移植） -->
-      <div class="location-map-wrap fade-in">
-        <!-- 都道府県境界データ出典: geolonia/japanese-prefectures (https://github.com/geolonia/japanese-prefectures) / Wikipedia日本地図.svg CC BY-SA -->
-        <svg viewBox="335 640 210 175" class="location-map" role="img" aria-label="奈良県御杖村と三重県嬉野の位置図">
-          <g class="pref-other" transform="translate(345.000000, 655.000000)">
-            <title>兵庫</title>
-            <path d="M31,90 L23,93 L23,88 L20,89 L20,86 L38,67 L39,69 L32,79 L35,88 L31,90 Z M3,59 L4,56 L0,50 L2,47 L1,40 L9,32 L8,26 L14,24 L14,20 L7,3 L16,0 L33,1 L32,5 L36,10 L41,9 L42,11 L42,17 L36,17 L35,23 L42,28 L47,26 L49,33 L59,35 L58,40 L55,41 L56,45 L62,48 L60,49 L62,60 L59,62 L53,60 L40,66 L25,56 L11,57 L11,53 L8,58 L5,56 L3,59 Z"/>
-          </g>
-          <g class="pref-other" transform="translate(377.000000, 649.000000)">
-            <title>京都</title>
-            <polygon points="44 63 41 55 37 54 38 51 34 54 26 46 27 41 17 39 15 32 10 34 3 29 4 23 10 23 10 17 9 15 4 16 0 11 1 7 3 10 2 8 19 0 23 7 15 14 18 15 20 11 20 15 24 17 23 21 25 18 27 19 25 14 31 11 32 14 31 20 34 25 46 27 51 32 48 46 51 56 55 56 59 62 60 66 58 68 54 65 50 68"/>
-          </g>
-          <g class="pref-other" transform="translate(423.000000, 655.000000)">
-            <title>滋賀</title>
-            <path d="M20,0 L27,3 L28,9 L31,9 L34,16 L35,19 L31,29 L33,30 L34,40 L30,50 L24,53 L17,50 L16,55 L13,56 L9,50 L5,50 L2,40 L5,26 L0,21 L3,17 L6,18 L9,11 L12,13 L18,10 L18,7 L21,8 L20,0 Z M20,13 L20,16 L18,13 L14,16 L16,24 L8,32 L8,36 L5,42 L7,45 L9,36 L15,35 L16,31 L25,25 L26,21 L20,13 Z"/>
-          </g>
-          <g class="pref-other" transform="translate(387.000000, 695.000000)">
-            <title>大阪</title>
-            <polygon points="16 0 24 8 28 5 27 8 31 9 34 17 29 28 31 37 29 42 3 48 0 45 7 44 14 37 17 28 19 30 17 22 20 20 18 9 20 8 14 5 13 1"/>
-          </g>
-          <g class="pref-other" transform="translate(385.000000, 737.000000)">
-            <title>和歌山</title>
-            <path d="M41,32 L44,38 L49,41 L45,46 L46,50 L38,55 L37,59 L35,59 L36,56 L19,51 L14,44 L17,41 L9,37 L4,30 L0,30 L3,25 L0,24 L6,21 L1,18 L5,16 L4,14 L8,14 L0,6 L2,3 L5,6 L31,0 L35,9 L31,10 L25,17 L30,24 L28,30 L41,32 Z M49,23 L49,26 L44,29 L44,26 L49,23 Z"/>
-          </g>
-          <g class="pref-other" transform="translate(469.000000, 673.000000)">
-            <title>愛知</title>
-            <polygon points="42 46 18 52 20 47 23 49 31 43 33 46 35 43 34 40 28 37 26 41 18 40 14 37 16 29 12 40 16 45 13 45 9 41 10 36 8 33 8 28 12 21 5 25 0 17 1 11 5 3 15 0 21 8 26 10 33 8 39 12 46 8 47 14 52 11 60 13 50 33 42 38"/>
-          </g>
-          <g class="pref-main" transform="translate(410.000000, 712.000000)">
-            <title>奈良</title>
-            <polygon points="24 48 19 51 19 54 17 54 17 57 16 57 3 55 5 49 0 42 6 35 10 34 6 25 8 20 6 11 11 0 17 5 21 2 25 5 27 3 29 7 26 8 28 9 27 13 36 18 28 24 31 29 29 30 31 33 29 37 30 44 29 47"/>
-          </g>
-          <g class="pref-main" transform="translate(426.000000, 683.000000)">
-            <title>三重</title>
-            <polygon points="8 95 3 92 0 86 1 86 1 83 3 83 8 80 8 77 13 76 14 73 13 66 15 62 13 59 15 58 12 53 20 47 11 42 12 38 10 37 13 36 11 32 10 28 13 27 14 22 21 25 27 22 31 12 30 2 36 0 43 7 48 15 42 16 43 20 36 32 35 40 51 47 53 52 56 51 55 55 50 55 55 56 55 61 51 62 53 60 50 58 49 60 43 61 46 57 42 57 39 62 39 60 36 63 34 61 34 64 32 62 25 66 22 68 23 73 21 72 22 70 18 73 22 77 20 77 22 80 19 78 20 81 13 85"/>
-          </g>
-          <g class="map-pin pin-nara" transform="translate(437,742)">
-            <circle r="5" class="pin-pulse"></circle>
-            <circle r="2.4" class="pin-dot"></circle>
-          </g>
-          <g class="map-pin pin-mie" transform="translate(446,718)">
-            <circle r="5" class="pin-pulse"></circle>
-            <circle r="2.4" class="pin-dot"></circle>
-          </g>
-        </svg>
-        <div class="map-legend">
-          <span class="legend-item"><i class="legend-dot pin-nara"></i>奈良県 御杖村</span>
-          <span class="legend-item"><i class="legend-dot pin-mie"></i>三重県 嬉野</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- ========== TIMELINE ========== -->
+    <section class="timeline" id="timeline">
+      <div class="section-inner">
+        <h2 class="section-title">プロジェクトの歩み</h2>
+        <div class="timeline-track">
 
-  <!-- Section 3: 01 御杖村 -->
-  <section class="section section-light-alt">
-    <div class="section-inner">
-      <div class="project-block fade-in">
-        <div>
-          <span class="num">01</span>
-          <h3>奈良県 御杖村プロジェクト</h3>
-          <div class="stat-block" style="grid-template-columns:repeat(2,1fr);margin-top:2rem;">
-            <div class="stat-item" style="text-align:left;">
-              <span class="big-num">20<small>ha</small></span>
-              <p>拠点面積</p>
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2023年 8月</span>
+              <p>皆伐直後<br><small>奈良県御杖村 — 伐採開始</small></p>
             </div>
-            <div class="stat-item" style="text-align:left;">
-              <span class="big-num">20,000<small>本</small></span>
-              <p>植栽本数</p>
+            <div class="tl-photos single">
+              <img src="souseikiri-assets/images/tl-0801-1.jpg" alt="2023年8月 皆伐直後">
             </div>
           </div>
-        </div>
-        <img src="images/project-mitsue.jpg" alt="奈良県御杖村プロジェクト">
-      </div>
 
-      <div class="fade-in" style="max-width:760px;margin:0 auto;">
-        <h4 style="font-size:1.6rem;margin-bottom:1.6rem;">進捗の歩み</h4>
-        <ul class="timeline-list">
-          <li><span class="year">2023年8月</span><br><span class="desc">皆伐開始（伐採直後）</span></li>
-          <li><span class="year">2023年9月</span><br><span class="desc">伐採作業 進行〜本格化</span><img class="thumb" src="images/timeline-early.jpg" alt="伐採作業進行中の様子"></li>
-          <li><span class="year">2024年</span><br><span class="desc">用地確定</span></li>
-          <li><span class="year">2025年</span><br><span class="desc">既存木 伐採完了</span></li>
-          <li class="is-current">
-            <span class="year">2026年（現在）</span><br><span class="desc">地拵え（植栽に向けた地面整備）</span>
-            <video class="project-video" src="videos/jikoshira-1.mp4" controls muted playsinline preload="metadata"></video>
-          </li>
-          <li><span class="year">2026年〜</span><br><span class="desc">植栽開始（メリクロン統一苗・計画）</span></li>
-          <li><span class="year">2031年（予定）</span><br><span class="desc">初回収穫（5年成木サイクル完了・計画）</span></li>
-        </ul>
-        <div class="mini-gallery">
-          <img src="images/timeline-current-1.jpg" alt="地拵え作業の様子1">
-          <img src="images/timeline-current-2.jpg" alt="地拵え作業の様子2">
-          <img src="images/project-mitsue.jpg" alt="御杖村プロジェクト現地">
-        </div>
-        <p class="nccc-note">
-          ※進捗の年次はsouseikiri既存資料に基づく計画・実績の記録です。2031年の初回収穫は計画上の見込みであり、確定した事実ではありません。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: 02 嬉野 -->
-  <section class="section section-light">
-    <div class="section-inner">
-      <div class="project-block fade-in">
-        <img src="images/project-ureshino.jpg" alt="三重県嬉野プロジェクト">
-        <div>
-          <span class="num">02</span>
-          <h3>三重県 嬉野プロジェクト</h3>
-          <div class="stat-block" style="grid-template-columns:repeat(2,1fr);margin-top:2rem;">
-            <div class="stat-item" style="text-align:left;">
-              <span class="big-num">20<small>ha</small></span>
-              <p>拠点面積</p>
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2023年 9月上旬</span>
+              <p>皆伐初期<br><small>伐採作業 進行中</small></p>
             </div>
-            <div class="stat-item" style="text-align:left;">
-              <span class="big-num">20,000<small>本</small></span>
-              <p>植栽本数</p>
+            <div class="tl-photos">
+              <div class="photo-slider">
+                <div class="photo-slides">
+                  <img class="slide-img active" src="souseikiri-assets/images/tl-0901-1.jpg" alt="皆伐初期 1">
+                  <img class="slide-img" src="souseikiri-assets/images/tl-0901-2.jpg" alt="皆伐初期 2">
+                  <img class="slide-img" src="souseikiri-assets/images/tl-0901-3.jpg" alt="皆伐初期 3">
+                </div>
+                <button class="slide-prev" aria-label="前へ">&#8249;</button>
+                <button class="slide-next" aria-label="次へ">&#8250;</button>
+                <div class="slide-dots">
+                  <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+              </div>
             </div>
           </div>
+
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2023年 9月下旬</span>
+              <p>皆伐中<br><small>大規模伐採 本格化</small></p>
+            </div>
+            <div class="tl-photos">
+              <div class="photo-slider">
+                <div class="photo-slides">
+                  <img class="slide-img active" src="souseikiri-assets/images/tl-0920-1.jpg" alt="皆伐中 1">
+                  <img class="slide-img" src="souseikiri-assets/images/tl-0920-2.jpg" alt="皆伐中 2">
+                  <img class="slide-img" src="souseikiri-assets/images/tl-0920-3.jpg" alt="皆伐中 3">
+                </div>
+                <button class="slide-prev" aria-label="前へ">&#8249;</button>
+                <button class="slide-next" aria-label="次へ">&#8250;</button>
+                <div class="slide-dots">
+                  <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2023年 9月下旬</span>
+              <p>皆伐中旬<br><small>伐採作業 最終段階</small></p>
+            </div>
+            <div class="tl-photos">
+              <div class="photo-slider">
+                <div class="photo-slides">
+                  <img class="slide-img active" src="souseikiri-assets/images/tl-0921-1.jpg" alt="皆伐中旬 1">
+                  <img class="slide-img" src="souseikiri-assets/images/tl-0921-2.jpg" alt="皆伐中旬 2">
+                  <img class="slide-img" src="souseikiri-assets/images/tl-0921-3.jpg" alt="皆伐中旬 3">
+                  <img class="slide-img" src="souseikiri-assets/images/tl-0921-4.jpg" alt="皆伐中旬 4">
+                  <img class="slide-img" src="souseikiri-assets/images/tl-0921-5.jpg" alt="皆伐中旬 5">
+                </div>
+                <button class="slide-prev" aria-label="前へ">&#8249;</button>
+                <button class="slide-next" aria-label="次へ">&#8250;</button>
+                <div class="slide-dots">
+                  <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2024年</span>
+              <p>用地確定<br><small>奈良県御杖村 / 三重県嬉野</small></p>
+            </div>
+          </div>
+
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2025年</span>
+              <p>既存木 伐採完了</p>
+            </div>
+          </div>
+
+          <div class="timeline-item current">
+            <div class="timeline-dot pulse"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2026年 ← 今ここ</span>
+              <p>地拵え<br><small>植栽に向けた地面整備</small></p>
+            </div>
+            <div class="tl-photos single">
+              <div class="video-seq">
+                <video id="jikoshira-video"
+                       src="souseikiri-assets/videos/jikoshira-1.mp4"
+                       autoplay muted playsinline>
+                </video>
+                <div class="video-seq-dots">
+                  <span class="vdot active"></span>
+                  <span class="vdot"></span>
+                  <span class="vdot"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item future">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2026年</span>
+              <p>植栽開始<br><small>メリクロン統一苗 40,000本</small></p>
+            </div>
+          </div>
+
+          <div class="timeline-item future">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2031年</span>
+              <p>初回収穫<br><small>5年成木サイクル完了</small></p>
+            </div>
+          </div>
+
         </div>
       </div>
+      <div class="diagonal-bottom-rev"></div>
+    </section>
 
-      <div class="fade-in" style="max-width:760px;margin:0 auto;">
-        <h4 style="font-size:1.6rem;margin-bottom:1.6rem;">進捗の歩み</h4>
-        <ul class="timeline-list">
-          <li><span class="year">2023年〜2025年</span><br><span class="desc">伐採・用地確定（御杖村と並行して進行）</span></li>
-          <li class="is-current"><span class="year">2026年（現在）</span><br><span class="desc">地拵え（植栽に向けた地面整備）</span></li>
-          <li><span class="year">2026年〜</span><br><span class="desc">植栽開始（メリクロン統一苗・計画）</span></li>
-          <li><span class="year">2031年（予定）</span><br><span class="desc">初回収穫（5年成木サイクル完了・計画）</span></li>
-        </ul>
-        <p class="nccc-note">
-          ※嬉野固有の年次詳細は御杖村と分離した記録が現状ないため、確認が取れ次第正確な年次に更新します。初回収穫時期は計画上の見込みであり、確定した事実ではありません。
+    <!-- ========== 2拠点 ========== -->
+    <section class="locations" id="locations">
+      <div class="section-inner">
+        <h2 class="section-title">2拠点の概要</h2>
+
+        <div class="location-map-wrap">
+          <!-- 都道府県境界データ出典: geolonia/japanese-prefectures (https://github.com/geolonia/japanese-prefectures) / Wikipedia日本地図.svg CC BY-SA -->
+          <svg viewBox="335 640 210 175" class="location-map" role="img" aria-label="奈良県御杖村と三重県嬉野の位置図">
+            <g class="pref-other" transform="translate(345.000000, 655.000000)">
+              <title>兵庫</title>
+              <path d="M31,90 L23,93 L23,88 L20,89 L20,86 L38,67 L39,69 L32,79 L35,88 L31,90 Z M3,59 L4,56 L0,50 L2,47 L1,40 L9,32 L8,26 L14,24 L14,20 L7,3 L16,0 L33,1 L32,5 L36,10 L41,9 L42,11 L42,17 L36,17 L35,23 L42,28 L47,26 L49,33 L59,35 L58,40 L55,41 L56,45 L62,48 L60,49 L62,60 L59,62 L53,60 L40,66 L25,56 L11,57 L11,53 L8,58 L5,56 L3,59 Z"/>
+            </g>
+            <g class="pref-other" transform="translate(377.000000, 649.000000)">
+              <title>京都</title>
+              <polygon points="44 63 41 55 37 54 38 51 34 54 26 46 27 41 17 39 15 32 10 34 3 29 4 23 10 23 10 17 9 15 4 16 0 11 1 7 3 10 2 8 19 0 23 7 15 14 18 15 20 11 20 15 24 17 23 21 25 18 27 19 25 14 31 11 32 14 31 20 34 25 46 27 51 32 48 46 51 56 55 56 59 62 60 66 58 68 54 65 50 68"/>
+            </g>
+            <g class="pref-other" transform="translate(423.000000, 655.000000)">
+              <title>滋賀</title>
+              <path d="M20,0 L27,3 L28,9 L31,9 L34,16 L35,19 L31,29 L33,30 L34,40 L30,50 L24,53 L17,50 L16,55 L13,56 L9,50 L5,50 L2,40 L5,26 L0,21 L3,17 L6,18 L9,11 L12,13 L18,10 L18,7 L21,8 L20,0 Z M20,13 L20,16 L18,13 L14,16 L16,24 L8,32 L8,36 L5,42 L7,45 L9,36 L15,35 L16,31 L25,25 L26,21 L20,13 Z"/>
+            </g>
+            <g class="pref-other" transform="translate(387.000000, 695.000000)">
+              <title>大阪</title>
+              <polygon points="16 0 24 8 28 5 27 8 31 9 34 17 29 28 31 37 29 42 3 48 0 45 7 44 14 37 17 28 19 30 17 22 20 20 18 9 20 8 14 5 13 1"/>
+            </g>
+            <g class="pref-other" transform="translate(385.000000, 737.000000)">
+              <title>和歌山</title>
+              <path d="M41,32 L44,38 L49,41 L45,46 L46,50 L38,55 L37,59 L35,59 L36,56 L19,51 L14,44 L17,41 L9,37 L4,30 L0,30 L3,25 L0,24 L6,21 L1,18 L5,16 L4,14 L8,14 L0,6 L2,3 L5,6 L31,0 L35,9 L31,10 L25,17 L30,24 L28,30 L41,32 Z M49,23 L49,26 L44,29 L44,26 L49,23 Z"/>
+            </g>
+            <g class="pref-other" transform="translate(469.000000, 673.000000)">
+              <title>愛知</title>
+              <polygon points="42 46 18 52 20 47 23 49 31 43 33 46 35 43 34 40 28 37 26 41 18 40 14 37 16 29 12 40 16 45 13 45 9 41 10 36 8 33 8 28 12 21 5 25 0 17 1 11 5 3 15 0 21 8 26 10 33 8 39 12 46 8 47 14 52 11 60 13 50 33 42 38"/>
+            </g>
+            <g class="pref-main" transform="translate(410.000000, 712.000000)">
+              <title>奈良</title>
+              <polygon points="24 48 19 51 19 54 17 54 17 57 16 57 3 55 5 49 0 42 6 35 10 34 6 25 8 20 6 11 11 0 17 5 21 2 25 5 27 3 29 7 26 8 28 9 27 13 36 18 28 24 31 29 29 30 31 33 29 37 30 44 29 47"/>
+            </g>
+            <g class="pref-main" transform="translate(426.000000, 683.000000)">
+              <title>三重</title>
+              <polygon points="8 95 3 92 0 86 1 86 1 83 3 83 8 80 8 77 13 76 14 73 13 66 15 62 13 59 15 58 12 53 20 47 11 42 12 38 10 37 13 36 11 32 10 28 13 27 14 22 21 25 27 22 31 12 30 2 36 0 43 7 48 15 42 16 43 20 36 32 35 40 51 47 53 52 56 51 55 55 50 55 55 56 55 61 51 62 53 60 50 58 49 60 43 61 46 57 42 57 39 62 39 60 36 63 34 61 34 64 32 62 25 66 22 68 23 73 21 72 22 70 18 73 22 77 20 77 22 80 19 78 20 81 13 85"/>
+            </g>
+            <g class="map-pin pin-nara" transform="translate(437,742)">
+              <circle r="5" class="pin-pulse"></circle>
+              <circle r="2.4" class="pin-dot"></circle>
+            </g>
+            <g class="map-pin pin-mie" transform="translate(446,718)">
+              <circle r="5" class="pin-pulse"></circle>
+              <circle r="2.4" class="pin-dot"></circle>
+            </g>
+          </svg>
+          <div class="map-legend">
+            <span class="legend-item"><i class="legend-dot pin-nara"></i>奈良県 御杖村</span>
+            <span class="legend-item"><i class="legend-dot pin-mie"></i>三重県 嬉野</span>
+          </div>
+        </div>
+
+        <div class="location-cards">
+
+          <div class="loc-card">
+            <div class="loc-body">
+              <h3>奈良県 御杖村</h3>
+              <div class="loc-numbers">
+                <span class="num">20<small>ha</small></span>
+                <span class="num">20,000<small>本</small></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="loc-card">
+            <div class="loc-body">
+              <h3>三重県 嬉野</h3>
+              <div class="loc-numbers">
+                <span class="num">20<small>ha</small></span>
+                <span class="num">20,000<small>本</small></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="total-bar">
+          合計 <strong>40ha・40,000本</strong>　国内早生桐 実績最大規模
+        </div>
+      </div>
+      <div class="diagonal-bottom"></div>
+    </section>
+
+    <!-- ========== 3つの差別化 ========== -->
+    <section class="features" id="features" style="background-image:url('souseikiri-assets/images/features-bg.jpg');">
+      <div class="features-overlay"></div>
+      <div class="section-inner">
+        <h2 class="section-title light">SANSEIの3つの強み</h2>
+        <div class="feature-cards">
+
+          <div class="feat-card">
+            <div class="feat-icon">🌱</div>
+            <h3>メリクロン統一苗</h3>
+            <p>組織培養技術による均一クローン苗。品質のばらつきゼロ。種苗登録申請中。</p>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-icon">🛰</div>
+            <h3>20ha 一体管理</h3>
+            <p>広大な一体地をドローン・AI管理で効率運用。スマート林業を実践。</p>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-icon">📜</div>
+            <h3>種苗登録 申請中</h3>
+            <p>京都皇帝早生桐の品種を国に登録申請中。登録後は30年間の独占的な繁殖・販売権が生まれる。</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="diagonal-bottom-rev"></div>
+    </section>
+
+    <!-- ========== 数字で語る ========== -->
+    <section class="numbers" id="numbers">
+      <div class="section-inner">
+        <h2 class="section-title">数字で見る早生桐</h2>
+        <div class="number-grid">
+          <div class="num-item">
+            <span class="big-num">90<small>t</small></span>
+            <p>CO₂吸収量<br><small>ha/年（GPP）</small></p>
+          </div>
+          <div class="num-item">
+            <span class="big-num">5<small>年</small></span>
+            <p>成木サイクル<br><small>スギの1/10</small></p>
+          </div>
+          <div class="num-item">
+            <span class="big-num">40,000<small>本</small></span>
+            <p>植栽本数<br><small>国内実績最大</small></p>
+          </div>
+          <div class="num-item">
+            <span class="big-num">50<small>カ国</small></span>
+            <p>WeGrow展開国<br><small>500ha超</small></p>
+          </div>
+        </div>
+        <p class="nccc-note" style="max-width:640px;margin:2.4rem auto 0;">
+          ※CO₂吸収量・WeGrow展開国等の数値は算定条件下の理論値・参考情報であり、NCCCによる認証値ではありません。
         </p>
       </div>
-    </div>
-  </section>
+      <div class="diagonal-bottom"></div>
+    </section>
 
-  <!-- Section 5: なぜこの2拠点なのか -->
-  <section class="section section-dark">
-    <div class="section-inner fade-in" style="max-width:760px;">
-      <div class="section-title" style="text-align:left;margin:0 0 2rem;">
-        <h2>なぜこの2拠点なのか</h2>
+    <!-- ========== CTA ========== -->
+    <section class="cta" id="cta" style="background-image:url('souseikiri-assets/images/cta-bg.jpg');">
+      <div class="cta-overlay"></div>
+      <div class="section-inner">
+        <h2>お問い合わせはこちら</h2>
+        <a href="contact.html" class="btn-cta">お問い合わせ</a>
       </div>
-      <p style="font-size:1.6rem;opacity:.85;">
-        奈良県御杖村・三重県嬉野は、それぞれ荒廃地・遊休地の活用という観点から選定した拠点です。
-        詳細な選定理由は今後のコンテンツ拡充で追記予定です。
-      </p>
-      <div style="margin-top:4rem;text-align:center;">
-        <a href="contact.html" class="btn btn-primary">お問い合わせはこちら</a>
-      </div>
-    </div>
-  </section>
+    </section>
+
+  </div>
+  <!-- ここまで souseikiri 移植部分 -->
 
 </main>
 
@@ -258,5 +393,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="souseikiri-assets/script.js"></script>
 </body>
 </html>
