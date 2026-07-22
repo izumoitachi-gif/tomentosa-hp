@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ｜株式会社SANSEIパウロウニア・トメントサ</title>
+<meta name="description" content="株式会社SANSEIパウロウニア・トメントサへのお問い合わせはこちらから。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navi">
+  <div class="navi-in">
+    <a href="index.html" class="navi-logo">SANSEI<br>Paulownia Tomentosa</a>
+    <nav class="navi-links">
+      <a href="about.html">会社概要</a>
+      <a href="paulownia.html">早生桐について</a>
+      <a href="carbon-credit.html">カーボンクレジットの取組</a>
+      <a href="project.html">植林プロジェクト</a>
+      <a href="news.html">最新ニュース</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+    <button class="navi-menu-button" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="section-inner">
+      <span class="eyebrow">Contact</span>
+      <h1>お問い合わせ</h1>
+      <p class="lead">事業に関するご質問はこちらのフォームからお送りください。</p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="section-inner fade-in">
+      <form class="contact-form" onsubmit="return false;">
+
+        <div class="form-group">
+          <label for="name">お名前<span class="form-required">必須</span></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="company">会社名・団体名</label>
+          <input type="text" id="company" name="company">
+        </div>
+
+        <div class="form-group">
+          <label for="email">メールアドレス<span class="form-required">必須</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">お問い合わせ内容<span class="form-required">必須</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">送信する</button>
+        <p style="margin-top:1.6rem;font-size:1.3rem;color:var(--color-text-muted);">
+          ※本フォームはドラフト版のため送信機能は未接続です。実装時に送信先を設定します。
+        </p>
+
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div>
+        <h4>株式会社SANSEIパウロウニア・トメントサ</h4>
+        <p style="font-size:1.4rem;opacity:.75;">早生桐（パウロウニア・トメントサ）事業専業</p>
+      </div>
+      <div>
+        <h4>サイトマップ</h4>
+        <ul>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="paulownia.html">早生桐について</a></li>
+          <li><a href="carbon-credit.html">カーボンクレジットの取組</a></li>
+          <li><a href="project.html">植林プロジェクト</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>関連</h4>
+        <ul>
+          <li><a href="news.html">最新ニュース</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 株式会社SANSEIパウロウニア・トメントサ</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
