@@ -281,6 +281,13 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
   padding: 12rem 0 6rem;
   overflow: hidden;
 }
+/* section-diagonal/section-wave の::after（斜めカット・波型）はヒーロー外周をわずかにはみ出す
+   設計のため、overflowはvisibleで上書きする（詳細度を.home-hero単体より上げて確実に勝たせる） */
+.home-hero.section-diagonal,
+.home-hero.section-wave {
+  overflow: visible;
+}
+.home-hero-bg { overflow: hidden; } /* driftGlowアニメーションのはみ出しはここで吸収する */
 .home-hero-bg {
   position: absolute;
   inset: 0;
