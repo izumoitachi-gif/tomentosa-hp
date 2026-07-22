@@ -703,6 +703,79 @@ h3 { font-size: clamp(1.8rem, 2.5vw, 2.2rem); }
 .mini-gallery img:hover { transform: scale(1.03); }
 @media (max-width: 600px) { .mini-gallery { grid-template-columns: repeat(2, 1fr); } }
 
+/* ---------- 位置図（SVG・souseikiriから移植） ---------- */
+.location-map-wrap {
+  max-width: 380px;
+  margin: 0 auto 3.2rem;
+}
+.location-map {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.pref-other {
+  fill: #e3e3da !important;
+  stroke: var(--color-border) !important;
+  stroke-width: .6;
+}
+.pref-main {
+  fill: var(--color-accent) !important;
+  stroke: var(--color-border) !important;
+  stroke-width: .6;
+}
+.map-pin .pin-dot { stroke: #fff; stroke-width: .5; }
+.map-pin .pin-pulse {
+  fill: none;
+  stroke-width: .5;
+  opacity: .6;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mapPulse 2s ease-out infinite;
+}
+.pin-nara .pin-dot, .pin-nara .pin-pulse { fill: #c9a24a; stroke: #c9a24a; }
+.pin-nara .pin-dot { fill: #c9a24a; stroke: #fff; }
+.pin-mie .pin-dot, .pin-mie .pin-pulse { fill: var(--color-accent-dark); stroke: var(--color-accent-dark); }
+.pin-mie .pin-dot { fill: var(--color-accent-dark); stroke: #fff; }
+.map-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2.8rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+.legend-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15);
+}
+.legend-dot.pin-nara { background: #c9a24a; }
+.legend-dot.pin-mie { background: var(--color-accent-dark); }
+@keyframes mapPulse {
+  0%   { opacity: .6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+/* ---------- 動画（地拵え現地映像） ---------- */
+.project-video {
+  width: 100%;
+  max-width: 640px;
+  margin: 2.4rem auto 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: block;
+}
+
 /* ---------- 比較ブロック ---------- */
 .comparison-block {
   display: flex;
