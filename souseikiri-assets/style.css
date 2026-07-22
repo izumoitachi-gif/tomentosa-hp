@@ -1,4 +1,31 @@
 /* souseikiri style.css を .souseikiri-embed スコープに変換したもの（自動生成） */
+
+/* ---------- Googleマップ埋め込み（試験導入・SVG地図の代替案・2026-07-22） ---------- */
+.souseikiri-embed .gmap-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 32px;
+}
+.souseikiri-embed .gmap-item h4 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--green-dark);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.souseikiri-embed .gmap-item iframe {
+  width: 100%;
+  height: 280px;
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 6px 24px rgba(0,0,0,.15);
+}
+@media (max-width: 700px) {
+  .souseikiri-embed .gmap-wrap { grid-template-columns: 1fr; }
+}
 /* ========== RESET & BASE ========== */.souseikiri-embed *, .souseikiri-embed *::before, .souseikiri-embed *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
